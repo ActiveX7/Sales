@@ -1,99 +1,140 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ActiveTsh Technology</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
-        .typing-svg { text-align: center; margin: 2rem 0; }
-        .card-hover { transition: all 0.3s ease; }
-        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(155,77,255,0.3); }
-        .bg-purple-gradient { background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 100%); }
-        .btn-dm { background: linear-gradient(95deg, #7c3aed, #a855f7); }
-        .btn-dm:hover { background: linear-gradient(95deg, #8b5cf6, #c084fc); transform: scale(1.05); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActiveTsh Technology</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#1a002b,#6a0dad);
+    color:white;
+    text-align:center;
+}
+
+/* HEADER */
+header{
+    padding:30px;
+}
+
+/* CARDS */
+.container{
+    padding:20px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background: rgba(255,255,255,0.08);
+    margin:15px;
+    padding:25px;
+    width:280px;
+    border-radius:15px;
+    backdrop-filter: blur(10px);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px) scale(1.03);
+}
+
+/* BUTTON */
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:white;
+    color:#6a0dad;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ddd;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:30px;
+    padding:20px;
+    opacity:0.7;
+}
+</style>
 </head>
-<body class="bg-purple-gradient text-white">
-    <div class="container mx-auto px-4 py-6 max-w-6xl">
-        <!-- Header -->
-        <div class="flex justify-between items-center flex-wrap gap-4 border-b border-purple-500/30 pb-4 mb-6">
-            <div>
-                <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-300 to-purple-500 bg-clip-text text-transparent">
-                    <i class="fas fa-microchip text-purple-400"></i> ActiveTsh Technology
-                </h1>
-                <p class="text-purple-300 text-sm">Tech Solutions & Premium Servers</p>
-            </div>
-            <div class="bg-purple-900/50 backdrop-blur px-4 py-2 rounded-full border border-purple-500">
-                <i class="fab fa-whatsapp text-green-400"></i> DM: +255 678 256 099 | +255 717 160 991
-            </div>
-        </div>
 
-        <!-- Typing SVG -->
-        <div class="typing-svg my-6">
-            <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=A855F7&center=true&vCenter=true&width=650&lines=Active+Tsh+Tech;Mauzo+ya+Technology;Panel+%7C+VPS+%7C+Scripts;Customization+Expert" alt="ActiveTsh Typing" class="mx-auto w-full max-w-2xl">
-        </div>
+<body>
 
-        <!-- Services Grid -->
-        <div class="grid md:grid-cols-3 gap-6 my-10">
-            <!-- Panel Card -->
-            <div class="bg-purple-900/40 backdrop-blur rounded-2xl p-6 border border-purple-500/40 card-hover">
-                <i class="fas fa-gamepad text-5xl text-purple-400 mb-3"></i>
-                <h2 class="text-2xl font-bold">Unlimited Panel</h2>
-                <p class="text-3xl font-bold text-purple-300 my-2">TSh 4,000</p>
-                <p class="text-purple-200 mb-4">Pterodactyl panel isiyo na kikomo - lifetime access</p>
-                <a href="https://wa.me/255678256099?text=Nataka%20Kununua%20Panel%20ya%204000" target="_blank" class="btn-dm inline-flex items-center gap-2 px-5 py-2 rounded-full font-semibold"><i class="fab fa-whatsapp"></i> Nunua DM</a>
-            </div>
-            <!-- VPS Card -->
-            <div class="bg-purple-900/40 backdrop-blur rounded-2xl p-6 border border-purple-500/40 card-hover">
-                <i class="fas fa-server text-5xl text-purple-400 mb-3"></i>
-                <h2 class="text-2xl font-bold">VPS Powerful</h2>
-                <p class="text-xl font-bold text-purple-300 my-2">Kuanzia 8GB RAM</p>
-                <p class="text-purple-200 mb-4">VPS za kasi, SSD, uptime 99.9%</p>
-                <a href="https://wa.me/255717160991?text=Nataka%20VPS%20ya%20ActiveTsh" target="_blank" class="btn-dm inline-flex items-center gap-2 px-5 py-2 rounded-full font-semibold"><i class="fab fa-whatsapp"></i> DM kwa bei</a>
-            </div>
-            <!-- BugBots Card -->
-            <div class="bg-purple-900/40 backdrop-blur rounded-2xl p-6 border border-purple-500/40 card-hover">
-                <i class="fas fa-robot text-5xl text-purple-400 mb-3"></i>
-                <h2 class="text-2xl font-bold">BugBots & Scripts</h2>
-                <p class="text-lg font-bold text-purple-300">VIP 3k | Buying 5k</p>
-                <p class="text-purple-200 mb-4">BugBots + premium scripts za michezo</p>
-                <a href="https://wa.me/255678256099?text=Nataka%20Kununua%20Script" target="_blank" class="btn-dm inline-flex items-center gap-2 px-5 py-2 rounded-full font-semibold"><i class="fab fa-whatsapp"></i> Oda Script</a>
-            </div>
-        </div>
+<!-- TYPING HEADER -->
+<header>
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=32&duration=3000&pause=1000&color=8A2BE2&center=true&vCenter=true&width=600&lines=ActiveTsh+Technology;Best+Tech+Services;Grow+With+Us;Admin+%26+Reseller" />
+</header>
 
-        <!-- Customization Section -->
-        <div class="bg-purple-900/30 rounded-2xl p-6 my-8 text-center border border-purple-500/30">
-            <h2 class="text-2xl font-bold mb-4"><i class="fas fa-magic text-purple-400"></i> Huduma za Customization</h2>
-            <div class="flex flex-wrap justify-center gap-4 my-4">
-                <span class="bg-purple-800/50 px-4 py-2 rounded-full"><i class="fas fa-cog"></i> Panel Customization</span>
-                <span class="bg-purple-800/50 px-4 py-2 rounded-full"><i class="fas fa-code"></i> Script Customization</span>
-                <span class="bg-purple-800/50 px-4 py-2 rounded-full"><i class="fas fa-mobile-alt"></i> APK Customization</span>
-            </div>
-            <a href="https://wa.me/255717160991?text=Naomba%20Customization" target="_blank" class="btn-dm inline-flex items-center gap-2 px-6 py-2 rounded-full font-semibold"><i class="fab fa-whatsapp"></i> Wasiliana kwa Customization</a>
-        </div>
+<div class="container">
 
-        <!-- DM Numbers -->
-        <div class="bg-black/30 rounded-2xl p-6 text-center my-8">
-            <h2 class="text-xl font-bold mb-3"><i class="fas fa-comment-dots text-purple-400"></i> Muungano kwa Mteja</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <div class="bg-purple-900/60 px-6 py-3 rounded-full text-xl font-bold"><i class="fab fa-whatsapp text-green-400"></i> +255 678 256 099</div>
-                <div class="bg-purple-900/60 px-6 py-3 rounded-full text-xl font-bold"><i class="fab fa-whatsapp text-green-400"></i> +255 717 160 991</div>
-            </div>
-        </div>
+<div class="card">
+<h2>🔥 Panels</h2>
+<p>Unlimited Pterodactyl Panel - 4K</p>
+<a href="https://wa.me/255678256099">
+<button>Buy Now</button>
+</a>
+</div>
 
-        <!-- WhatsApp Links -->
-        <div class="grid md:grid-cols-2 gap-4 my-8">
-            <a href="https://whatsapp.com/channel/0029VbCuey0CMY08nyQ5g11P" target="_blank" class="bg-green-700 hover:bg-green-600 text-center py-4 rounded-xl font-bold text-lg"><i class="fab fa-whatsapp"></i> Fuata Channel yetu</a>
-            <a href="https://chat.whatsapp.com/LvxKWuGFoip5qkPNX7qz2e?mode=gi_t" target="_blank" class="bg-teal-700 hover:bg-teal-600 text-center py-4 rounded-xl font-bold text-lg"><i class="fab fa-whatsapp"></i> Jiunge na Group</a>
-        </div>
+<div class="card">
+<h2>⚡ VPS</h2>
+<p>Starting 8GB RAM+</p>
+<a href="https://wa.me/255717160991">
+<button>Order VPS</button>
+</a>
+</div>
 
-        <!-- Footer -->
-        <footer class="text-center text-purple-300 text-sm border-t border-purple-500/30 pt-6 mt-6">
-            <p>© 2025 ActiveTsh Technology | +255678256099 / +255717160991</p>
-        </footer>
-    </div>
+<div class="card">
+<h2>🤖 Bug Bots</h2>
+<p>VIP Script - 3K<br>Buying Script - 5K</p>
+<a href="https://wa.me/255678256099">
+<button>Get Script</button>
+</a>
+</div>
+
+<div class="card">
+<h2>🎨 Custom</h2>
+<p>Panel, Script & APK Customization</p>
+<a href="https://wa.me/255717160991">
+<button>Request</button>
+</a>
+</div>
+
+<div class="card">
+<h2>📢 Community</h2>
+
+<a href="https://whatsapp.com/channel/0029VbCuey0CMY08nyQ5g11P">
+<button>Follow Channel</button>
+</a>
+
+<br>
+
+<a href="https://chat.whatsapp.com/LvxKWuGFoip5qkPNX7qz2e?mode=gi_t">
+<button>Join Group</button>
+</a>
+
+</div>
+
+</div>
+
+<div class="footer">
+<p>Contact: +255678256099 | +255717160991</p>
+<p>© ActiveTsh Technology</p>
+</div>
+
 </body>
 </html>
