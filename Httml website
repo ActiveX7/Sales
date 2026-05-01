@@ -1,449 +1,61 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>ActiveTsh Technology | Mauzo na Customization</title>
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Inter + Space Grotesk -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #0c0118 0%, #1f0a2f 100%);
-      color: #f0eaff;
-      scroll-behavior: smooth;
-    }
-
-    :root {
-      --purple-dark: #2e0b4a;
-      --purple-vivid: #9b4dff;
-      --purple-glow: #b77eff;
-      --purple-soft: #d9b5ff;
-      --bg-card: rgba(35, 15, 55, 0.65);
-      --border-glow: rgba(155, 77, 255, 0.5);
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 1.5rem 2rem;
-    }
-
-    /* header */
-    .header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.8rem 0;
-      border-bottom: 1px solid rgba(155, 77, 255, 0.3);
-      margin-bottom: 1.5rem;
-    }
-
-    .logo h1 {
-      font-size: 1.9rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #e9c3ff, #b37bff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: -0.5px;
-    }
-    .logo p {
-      font-size: 0.8rem;
-      color: #cdb5ff;
-    }
-
-    .contact-quick {
-      background: rgba(75, 30, 110, 0.6);
-      backdrop-filter: blur(8px);
-      padding: 0.6rem 1.2rem;
-      border-radius: 60px;
-      border: 1px solid var(--purple-vivid);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .contact-quick i {
-      margin-right: 8px;
-      color: var(--purple-glow);
-    }
-
-    /* TYPING SVG CONTAINER - NEW HEADING */
-    .typing-hero {
-      text-align: center;
-      margin: 1.8rem 0 1.2rem;
-      background: rgba(25, 5, 45, 0.5);
-      padding: 1rem 0.5rem;
-      border-radius: 3rem;
-    }
-    .typing-svg-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      overflow-x: auto;
-    }
-    .typing-svg-wrapper img {
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 0 8px rgba(155, 77, 255, 0.5));
-    }
-    /* fallback for small screens */
-    @media (max-width: 640px) {
-      .typing-svg-wrapper img {
-        transform: scale(0.9);
-      }
-    }
-
-    /* description under typing */
-    .hero-sub {
-      text-align: center;
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: #d9c6ff;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .badge {
-      display: inline-block;
-      background: #3b1b5e;
-      padding: 0.3rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.85rem;
-      margin-top: 0.8rem;
-      font-weight: 500;
-      border: 1px solid var(--purple-vivid);
-    }
-
-    /* cards grid */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-      margin: 3rem 0;
-    }
-
-    .service-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      border-radius: 2rem;
-      padding: 1.6rem 1.5rem;
-      transition: all 0.25s ease;
-      border: 1px solid rgba(155, 77, 255, 0.3);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    }
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--purple-vivid);
-      box-shadow: 0 20px 30px -12px rgba(155, 77, 255, 0.4);
-      background: rgba(45, 20, 70, 0.8);
-    }
-    .card-icon {
-      font-size: 2.8rem;
-      color: var(--purple-glow);
-      margin-bottom: 1rem;
-    }
-    .service-card h3 {
-      font-size: 1.7rem;
-      margin-bottom: 0.75rem;
-      font-weight: 700;
-    }
-    .price {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #f0c3ff;
-      margin: 0.5rem 0;
-    }
-    .price span {
-      font-size: 1rem;
-      font-weight: 400;
-      color: #c9abff;
-    }
-    .description {
-      margin: 1rem 0;
-      line-height: 1.5;
-      color: #e2d4ff;
-    }
-    .btn-dm {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: linear-gradient(95deg, #6b25cf, #9b4dff);
-      padding: 0.7rem 1.4rem;
-      border-radius: 60px;
-      font-weight: 700;
-      color: white;
-      text-decoration: none;
-      margin-top: 1rem;
-      transition: 0.2s;
-      border: none;
-      font-size: 0.9rem;
-    }
-    .btn-dm i {
-      font-size: 1rem;
-    }
-    .btn-dm:hover {
-      background: linear-gradient(95deg, #832fe6, #b15eff);
-      transform: scale(1.02);
-      box-shadow: 0 5px 15px rgba(155, 77, 255, 0.5);
-    }
-
-    .custom-list {
-      margin-top: 0.8rem;
-      list-style: none;
-    }
-    .custom-list li {
-      margin: 0.5rem 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .custom-list li i {
-      color: var(--purple-glow);
-    }
-
-    .customization-section {
-      background: rgba(25, 5, 45, 0.7);
-      border-radius: 2rem;
-      padding: 2rem;
-      margin: 2rem 0;
-      border: 1px solid #7c3aed40;
-      text-align: center;
-    }
-    .customization-section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
-    .custom-badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-    }
-    .custom-badge {
-      background: #18112b;
-      padding: 0.5rem 1.2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      border-left: 4px solid var(--purple-vivid);
-    }
-
-    /* social & dm */
-    .social-links {
-      background: linear-gradient(115deg, #1e0a31, #2a0b44);
-      margin: 2.5rem 0;
-      border-radius: 2rem;
-      padding: 1.8rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1.5rem;
-      border: 1px solid var(--purple-vivid);
-    }
-    .social-item {
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-    }
-    .btn-wa {
-      background: #25D366;
-      color: #121212;
-    }
-    .btn-wa-group {
-      background: #128C7E;
-    }
-    .btn-wa-channel {
-      background: #075E54;
-    }
-    .social-item p {
-      margin-bottom: 0.8rem;
-      font-weight: 600;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-      color: white;
-    }
-    .btn-wa:hover {
-      background: #20b85f;
-      transform: scale(1.02);
-    }
-
-    .dm-contact-area {
-      background: rgba(0, 0, 0, 0.35);
-      border-radius: 1.5rem;
-      padding: 1.8rem;
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .dm-numbers {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin: 1rem 0;
-    }
-    .dm-number-card {
-      background: #1f0b30;
-      padding: 0.8rem 2rem;
-      border-radius: 60px;
-      font-size: 1.3rem;
-      font-weight: bold;
-      border: 1px solid #9b4dff;
-    }
-    .dm-number-card i {
-      margin-right: 12px;
-      color: #b87eff;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 0 1rem;
-      border-top: 1px solid #3c2360;
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      color: #bb9eff;
-    }
-
-    @media (max-width: 760px) {
-      .container {
-        padding: 1rem;
-      }
-      .dm-number-card {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-      }
-      .social-links {
-        flex-direction: column;
-      }
-      .service-card h3 {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ActiveTsh Technology</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#0c0118,#1f0a2f);color:#f0eaff;}
+.container{max-width:1280px;margin:0 auto;padding:1.5rem 2rem;}
+.header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:0.8rem 0;border-bottom:1px solid rgba(155,77,255,0.3);margin-bottom:1.5rem;}
+.logo h1{font-size:1.9rem;font-weight:800;background:linear-gradient(135deg,#e9c3ff,#b37bff);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.contact-quick{background:rgba(75,30,110,0.6);padding:0.6rem 1.2rem;border-radius:60px;border:1px solid #9b4dff;font-size:0.9rem;}
+.typing-hero{text-align:center;margin:1.8rem 0;}
+.typing-svg-wrapper img{max-width:100%;height:auto;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin:3rem 0;}
+.service-card{background:rgba(35,15,55,0.65);backdrop-filter:blur(12px);border-radius:2rem;padding:1.6rem 1.5rem;border:1px solid rgba(155,77,255,0.3);transition:0.25s;}
+.service-card:hover{transform:translateY(-8px);border-color:#9b4dff;}
+.card-icon{font-size:2.8rem;color:#b77eff;margin-bottom:1rem;}
+.service-card h3{font-size:1.7rem;margin-bottom:0.75rem;}
+.price{font-size:1.4rem;font-weight:800;color:#f0c3ff;margin:0.5rem 0;}
+.btn-dm{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(95deg,#6b25cf,#9b4dff);padding:0.7rem 1.4rem;border-radius:60px;font-weight:700;color:white;text-decoration:none;margin-top:1rem;}
+.customization-section{background:rgba(25,5,45,0.7);border-radius:2rem;padding:2rem;margin:2rem 0;text-align:center;}
+.custom-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin:1.5rem 0;}
+.custom-badge{background:#18112b;padding:0.5rem 1.2rem;border-radius:50px;display:inline-flex;align-items:center;gap:10px;border-left:4px solid #9b4dff;}
+.social-links{background:linear-gradient(115deg,#1e0a31,#2a0b44);margin:2.5rem 0;border-radius:2rem;padding:1.8rem 2rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5rem;border:1px solid #9b4dff;}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:0.8rem 1.8rem;border-radius:50px;text-decoration:none;font-weight:600;color:white;}
+.btn-wa{background:#25D366;}
+.btn-wa-group{background:#128C7E;}
+.btn-wa-channel{background:#075E54;}
+.dm-contact-area{background:rgba(0,0,0,0.35);border-radius:1.5rem;padding:1.8rem;text-align:center;margin:2rem 0;}
+.dm-numbers{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin:1rem 0;}
+.dm-number-card{background:#1f0b30;padding:0.8rem 2rem;border-radius:60px;font-size:1.3rem;font-weight:bold;border:1px solid #9b4dff;}
+footer{text-align:center;padding:2rem 0 1rem;border-top:1px solid #3c2360;margin-top:3rem;}
+@media(max-width:760px){.container{padding:1rem;}}
+</style>
 </head>
 <body>
 <div class="container">
-  <div class="header">
-    <div class="logo">
-      <h1><i class="fas fa-microchip"></i> ActiveTsh <span style="color:#b87eff;">Technology</span></h1>
-      <p>tech solutions & premium servers</p>
-    </div>
-    <div class="contact-quick">
-      <i class="fab fa-whatsapp"></i> DM: +255 678 256 099 | +255 717 160 991
-    </div>
-  </div>
-
-  <!-- TYPING SVG HEADER -> kama ulivyotaka (font Orbitron, rangi cyan + mistari yako) -->
-  <div class="typing-hero">
-    <div class="typing-svg-wrapper">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=600&lines=Active+Tsh+Tech;Site+of+grow;up+in+Tech;Admin+Reseller" alt="Active Tsh Tech Typing Animation" />
-    </div>
-    <div class="hero-sub">
-      <p>⭐⭐⭐ Mauzo ya Pterodactyl panels, VPS, BugBots & Customization za kiwango cha juu ⭐⭐⭐</p>
-      <div class="badge"><i class="fas fa-bolt"></i> Muamua wa kuaminika Tanzania | DM Direct kwa huduma zote</div>
-    </div>
-  </div>
-
-  <!-- Services grid: bidhaa zote -->
-  <div class="services-grid">
-    <!-- Unlimited Panel 4k -->
-    <div class="service-card">
-      <div class="card-icon"><i class="fas fa-gamepad"></i></div>
-      <h3>Unlimited Panel</h3>
-      <div class="price">TSh 4,000 <span>/ lifetime</span></div>
-      <div class="description">Pterodactyl panel isiyo na kikomo, inafaa kwa hosting ya game servers & applications. Kamilifu.</div>
-      <a href="https://wa.me/255678256099?text=Hello%20ActiveTsh%2C%20nataka%20kununua%20Unlimited%20Panel%20ya%204%2C000" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> Nunua kwa DM</a>
-    </div>
-
-    <!-- VPS 8GB+ -->
-    <div class="service-card">
-      <div class="card-icon"><i class="fas fa-server"></i></div>
-      <h3>VPS powerful</h3>
-      <div class="price">Kuanzia 8GB RAM <span> &nbsp;| hadi 64GB+</span></div>
-      <div class="description">VPS za kasi, SSD, uptime 99.9%. Anza na 8GB RAM, upgrade inapatikana. Bora kwa bots na hosting.</div>
-      <a href="https://wa.me/255717160991?text=Nataka%20kupata%20VPS%20ya%20ActiveTsh%20Technology" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> DM kwa bei</a>
-    </div>
-
-    <!-- BugBots + scripts -->
-    <div class="service-card">
-      <div class="card-icon"><i class="fas fa-robot"></i></div>
-      <h3>BugBots & Scripts</h3>
-      <div class="price">VIP Script 3k | Buying Script 5k</div>
-      <div class="description">BugBots za kisasa + premium scripts: <strong>VIP script</strong> (3,000) na <strong>Buying script</strong> (5,000).</div>
-      <a href="https://wa.me/255678256099?text=Nataka%20kununua%20BugBot%20au%20Script%20(3k%20au%205k)" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> Oda Script/Bot</a>
-    </div>
-  </div>
-
-  <!-- Customization zone -->
-  <div class="customization-section">
-    <h3><i class="fas fa-magic"></i> Huduma za Customization</h3>
-    <div class="custom-badges">
-      <div class="custom-badge"><i class="fas fa-cog"></i> Panel Customization</div>
-      <div class="custom-badge"><i class="fas fa-code"></i> Script Customization</div>
-      <div class="custom-badge"><i class="fas fa-mobile-alt"></i> APK Customization</div>
-    </div>
-    <p>Unahitaji panel ya kipekee, script maalum au apk yenye brand yako? Tunafanya customization kitaalamu.</p>
-    <a href="https://wa.me/255717160991?text=Naomba%20customization%20(Panel%2FScript%2FAPK)%20kwa%20ActiveTsh" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> Wasiliana kwa Customization</a>
-  </div>
-
-  <!-- DM contact double numbers -->
-  <div class="dm-contact-area">
-    <h3><i class="fas fa-comment-dots"></i> Muungano kwa Mteja (DM Direct)</h3>
-    <p>Kila huduma inaelekeza moja kwa moja kwa DM yetu. Wasiliana nasi kwa namba rasmi:</p>
-    <div class="dm-numbers">
-      <div class="dm-number-card"><i class="fab fa-whatsapp"></i> +255 678 256 099</div>
-      <div class="dm-number-card"><i class="fab fa-whatsapp"></i> +255 717 160 991</div>
-    </div>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem;">
-      <a href="https://wa.me/255678256099" target="_blank" class="btn btn-wa" style="background:#25D366;"><i class="fab fa-whatsapp"></i> DM Namba 1</a>
-      <a href="https://wa.me/255717160991" target="_blank" class="btn btn-wa" style="background:#128C7E;"><i class="fab fa-whatsapp"></i> DM Namba 2</a>
-    </div>
-  </div>
-
-  <!-- WhatsApp Channel & Group Links (kama ulivyotuma) -->
-  <div class="social-links">
-    <div class="social-item">
-      <p><i class="fab fa-whatsapp"></i> <strong>Channel yetu ya WhatsApp</strong></p>
-      <a href="https://whatsapp.com/channel/0029VbCuey0CMY08nyQ5g11P" target="_blank" class="btn btn-wa-channel"><i class="fab fa-whatsapp"></i> Fuata Channel</a>
-      <small style="display:block; margin-top:8px;">Pata taarifa za tech na matangazo</small>
-    </div>
-    <div class="social-item">
-      <p><i class="fas fa-users"></i> <strong>Group la WhatsApp</strong></p>
-      <a href="https://chat.whatsapp.com/LvxKWuGFoip5qkPNX7qz2e?mode=gi_t" target="_blank" class="btn btn-wa-group"><i class="fab fa-whatsapp"></i> Jiunge na Group</a>
-      <small style="display:block; margin-top:8px;">Wasiliana na wateja wengine, usaidizi wa haraka</small>
-    </div>
-  </div>
-
-  <!-- reminder: all services lead to DM -->
-  <div style="background: rgba(155,77,255,0.1); border-radius: 1.2rem; padding: 1rem; margin-top: 1rem; text-align: center; border-left: 5px solid #9b4dff;">
-    <i class="fas fa-info-circle"></i> <strong>Kila huduma</strong> (Paneli, VPS, BugBots, Scripts, Panel/Script/APK customization) inaelekeza moja kwa moja DM kwenye namba +255678256099 au +255717160991.
-  </div>
-
-  <footer>
-    <p>© 2025 ActiveTsh Technology | Mauzo ya Teknolojia na Customization | Quality & Trust</p>
-    <p><i class="fab fa-whatsapp"></i> +255678256099 / +255717160991 | <i class="fab fa-whatsapp"></i> Channel & Group zipo juu</p>
-  </footer>
+<div class="header">
+<div class="logo"><h1><i class="fas fa-microchip"></i> ActiveTsh <span style="color:#b87eff;">Technology</span></h1></div>
+<div class="contact-quick"><i class="fab fa-whatsapp"></i> DM: +255 678 256 099 | +255 717 160 991</div>
+</div>
+<div class="typing-hero">
+<div class="typing-svg-wrapper">
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=35&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=600&lines=Active+Tsh+Tech;Site+of+grow;up+in+Tech;Admin+Reseller" alt="Typing Animation">
+</div>
+</div>
+<div class="services-grid">
+<div class="service-card"><div class="card-icon"><i class="fas fa-gamepad"></i></div><h3>Unlimited Panel</h3><div class="price">TSh 4,000</div><div class="description">Pterodactyl panel isiyo na kikomo</div><a href="https://wa.me/255678256099?text=Nunua%20Panel" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> Nunua DM</a></div>
+<div class="service-card"><div class="card-icon"><i class="fas fa-server"></i></div><h3>VPS</h3><div class="price">Kuanzia 8GB RAM</div><div class="description">VPS za kasi na 99.9% uptime</div><a href="https://wa.me/255717160991?text=Nataka%20VPS" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> DM kwa bei</a></div>
+<div class="service-card"><div class="card-icon"><i class="fas fa-robot"></i></div><h3>BugBots & Scripts</h3><div class="price">VIP 3k | Buying 5k</div><div class="description">BugBots na premium scripts</div><a href="https://wa.me/255678256099?text=Nataka%20Script" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> Oda Script</a></div>
+</div>
+<div class="customization-section"><h3><i class="fas fa-magic"></i> Customization</h3><div class="custom-badges"><div class="custom-badge"><i class="fas fa-cog"></i> Panel</div><div class="custom-badge"><i class="fas fa-code"></i> Script</div><div class="custom-badge"><i class="fas fa-mobile-alt"></i> APK</div></div><a href="https://wa.me/255717160991?text=Customization" target="_blank" class="btn-dm"><i class="fab fa-whatsapp"></i> Wasiliana</a></div>
+<div class="dm-contact-area"><h3>DM Direct</h3><div class="dm-numbers"><div class="dm-number-card"><i class="fab fa-whatsapp"></i> +255 678 256 099</div><div class="dm-number-card"><i class="fab fa-whatsapp"></i> +255 717 160 991</div></div></div>
+<div class="social-links"><div class="social-item"><p><strong>Channel ya WhatsApp</strong></p><a href="https://whatsapp.com/channel/0029VbCuey0CMY08nyQ5g11P" target="_blank" class="btn btn-wa-channel"><i class="fab fa-whatsapp"></i> Fuata Channel</a></div><div class="social-item"><p><strong>Group la WhatsApp</strong></p><a href="https://chat.whatsapp.com/LvxKWuGFoip5qkPNX7qz2e?mode=gi_t" target="_blank" class="btn btn-wa-group"><i class="fab fa-whatsapp"></i> Jiunge na Group</a></div></div>
+<footer><p>© 2025 ActiveTsh Technology | +255678256099 / +255717160991</p></footer>
 </div>
 </body>
 </html>
